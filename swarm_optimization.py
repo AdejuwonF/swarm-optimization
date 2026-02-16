@@ -31,7 +31,7 @@ class OptimizationProblem():
         Assigns an objective score to each particle in an array.  
         Objective is assumed to be subject to maximization.
         Feasibility constraints (e.g if a child shape fits inside a parent shape)
-        should be accounted for by setting the score to negative infinity here.
+        should be accounted for by setting the score to the largest negative value (-np.finfo(np.float64).max).
 
         :param particles: n x self.param_dim array of particles.
         :type particles: np.ndarray
