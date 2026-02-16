@@ -26,6 +26,10 @@ class AckleyFunction(swarm_optimization.OptimizationProblem):
         self.b = b
         self.c = c
         self.param_dim = d
+
+    def initialize_particles(self, n: int):
+        return (np.random.rand(n, self.param_dim) * 10) - 5
+
     def objective_function(self, particles):
         result = -self.a * np.exp(-self.b*np.sqrt(np.sum(particles**2, axis=1)/self.param_dim))
         result -= np.exp(np.sum(np.cos(self.c * particles), axis=1) / self.param_dim)
