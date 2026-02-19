@@ -57,10 +57,10 @@ class OptimizationProblem():
 class ParticleSwarmSolver():
     def __init__(self, problem: OptimizationProblem,
                  momentum: float = 0.8 ,
-                 global_attraction  : float = 0.5,
-                 personal_attraction : float = 0.5, 
+                 global_attraction  : float = 1.5,
+                 personal_attraction : float = 1.5, 
                  num_particles : int = 1000,
-                 v_max : float = np.inf):
+                 v_max : float = 0.5):
         """
         Docstring for __init__
         
